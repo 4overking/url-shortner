@@ -1,0 +1,6 @@
+services:
+    repository.url:
+        class:   AppBundle\Repository\UrlRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - AppBundle\Entity\Url

@@ -1,0 +1,29 @@
+AppBundle\Entity\Url:
+    type:  entity
+    table: urls
+    repositoryClass: AppBundle\Repository\UrlRepository
+    id:
+        id:
+            type: integer
+            id:   true
+            generator:
+                strategy: AUTO
+    fields:
+        originalUrl:
+            type:   string
+            column: original_url
+            length: 255
+        shortTag:
+            type:   string
+            column: short_tag
+            length: 255
+            unique: true
+        createdAt:
+            column: created_at
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        usageCount:
+            type: integer
+            column: usage_count

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}Url shortner{% endblock %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% block body %}
+    <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <h1>Url shortener</h1>
+            <p>Enter url and press generate</p>
+        </div>
+        {{ form_start(form) }}
+        {{ form_row(form.originalUrl) }}
+        {{ form_row(form.shortTag) }}
+        {{ form_errors(form) }}
+            <span class="input-group-btn">
+                <input type="submit" class="btn btn-default" type="button" value="Go!"/>
+            </span>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}Done!{% endblock %}
+
+{% block body %}
+    <div class="container theme-showcase" role="main">
+        <div class="">
+            <h1>Short link ready!</h1>
+            <p class="lead">
+                <a href="{{ url('frontend_shorter_link', {'shortTag': url.shortTag}) }}">{{ url('frontend_shorter_link', {'shortTag': url.shortTag}) }}</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}
