@@ -43,6 +43,7 @@ class UrlFormType extends AbstractType
                 'label'          => 'Url',
                 'constraints'    => [
                     new Assert\NotNull(),
+                    new Assert\NotBlank(),
                     new Assert\Url(),
                 ],
             ])
@@ -57,7 +58,7 @@ class UrlFormType extends AbstractType
                     return $url;
                 },
                 function ($url) {
-                    if (!preg_match('/^(http|https):\/\//', $url)) {
+                    if (null !== $url && !preg_match('/^(http|https):\/\//', $url)) {
                         $url = 'http://'.$url;
                     }
 
